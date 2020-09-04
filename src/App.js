@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import TypoGraphy from "@material-ui/core/Typography";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Books from "./components/Books/Books";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<AppBar color="white" position="relative">
+				<Toolbar>
+					<TypoGraphy variant="title" color="inherit">
+						STEMXUS
+					</TypoGraphy>
+					<Navbar />
+				</Toolbar>
+			</AppBar>
+			<Switch>
+				<Route exact path="/books" component={Books} />
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;
