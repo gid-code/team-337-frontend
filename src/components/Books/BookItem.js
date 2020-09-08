@@ -14,7 +14,6 @@ import { LibraryBooks } from "@material-ui/icons";
 export default class BookItem extends Component {
 	render() {
 		const { book } = this.props;
-		console.log(book);
 		return (
 			<Grid item xm={12} sm={6} md={4} lg={3}>
 				<Card>
@@ -37,8 +36,8 @@ export default class BookItem extends Component {
 						<Button
 							variant="contained"
 							size="small"
-							color="secondary"
 							startIcon={<LibraryBooks />}
+							color="secondary"
 						>
 							Browse
 						</Button>
