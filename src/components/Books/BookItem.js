@@ -15,7 +15,7 @@ export default class BookItem extends Component {
 	render() {
 		const { book } = this.props;
 		return (
-			<Grid item xm={12} sm={6} md={4} lg={3}>
+			<Grid item sm={6} md={4} lg={3}>
 				<Card>
 					<CardActionArea>
 						<CardMedia
@@ -26,7 +26,12 @@ export default class BookItem extends Component {
 							title={book.title}
 						/>
 						<CardContent>
-							<Typography gutterBottom variant="h5" component="h2">
+							<Typography
+								gutterBottom
+								variant="h5"
+								component="h2"
+								color="secondary"
+							>
 								{book.title}
 							</Typography>
 							<Typography component="p">{book.desc}</Typography>
@@ -37,7 +42,7 @@ export default class BookItem extends Component {
 							variant="contained"
 							size="small"
 							startIcon={<LibraryBooks />}
-							color="secondary"
+							color="primary"
 						>
 							Browse
 						</Button>
