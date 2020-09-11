@@ -115,9 +115,9 @@ function Mainbar(props) {
 										<Button
 											variant="contained"
 											size="small"
-											startIcon={<PersonAdd />}
+											startIcon={<PersonAdd style={{ color: "white" }} />}
 											color="primary"
-											style={{ margin: 5 }}
+											style={{ margin: 5, color: "white" }}
 											onClick={() => {
 												handleClick("/register");
 											}}
@@ -128,9 +128,9 @@ function Mainbar(props) {
 										<Button
 											variant="contained"
 											size="small"
-											startIcon={<Person />}
+											startIcon={<Person style={{ color: "white" }} />}
 											color="primary"
-											style={{ margin: 5 }}
+											style={{ margin: 5, color: "white" }}
 											onClick={() => {
 												handleClick("/login");
 											}}

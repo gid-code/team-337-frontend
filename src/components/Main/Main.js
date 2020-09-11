@@ -18,7 +18,7 @@ export default class Main extends Component {
 							gutterBottom
 							variant="h5"
 						>
-							Book Category
+							Landing page
 						</Typography>
 
 						{/* <Grid item container spacing={4}>
