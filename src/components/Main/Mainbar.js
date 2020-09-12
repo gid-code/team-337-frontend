@@ -15,6 +15,8 @@ import {
 	Typography,
 	Avatar,
 	Box,
+	useMediaQuery,
+	useTheme,
 } from "@material-ui/core";
 import {
 	Menu,
@@ -27,6 +29,8 @@ import {
 function Mainbar(props) {
 	const { history, auth, login } = props;
 	const [open, setOpen] = useState(false);
+	const theme = useTheme();
+	const sDwn = useMediaQuery(theme.breakpoints.down("sm"));
 
 	const handleDrawerOpen = () => {
 		setOpen(true);
@@ -59,20 +63,21 @@ function Mainbar(props) {
 					</IconButton>
 				</Hidden>
 				<Typography
-					variant="h4"
+					variant={sDwn ? "h5" : "h4"}
 					color="primary"
 					onClick={() => handleClick("/")}
 				>
 					STEM
 				</Typography>
 				<Typography
-					variant="h4"
+					variant={sDwn ? "h5" : "h4"}
 					color="secondary"
 					style={{ marginRight: 20 }}
 					onClick={() => handleClick("/")}
 				>
 					XUS
 				</Typography>
+
 				<div style={{ width: "100%" }}>
 					<Box display="flex">
 						<Box flexGrow={1}>

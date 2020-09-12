@@ -9,17 +9,10 @@ import {
 	Button,
 	Box,
 	Select,
+	Hidden,
 } from "@material-ui/core";
-import {
-	PersonOutline,
-	Email,
-	Lock,
-	AccountBox,
-	Facebook,
-	Instagram,
-	Twitter,
-	YouTube,
-} from "@material-ui/icons";
+import { PersonOutline, Email, Lock, AccountBox } from "@material-ui/icons";
+import Footer from "../../Footer";
 
 export default class Register extends Component {
 	render() {
@@ -31,8 +24,8 @@ export default class Register extends Component {
 					container
 					style={{ marginTop: 20, padding: 10, minHeight: "90vh" }}
 				>
-					<Grid item xs={false} sm={2} md={false} lg={2}></Grid>
-					<Grid item container sm={8} md={12} lg={8} direction="column">
+					<Grid item xs={false} sm={1} md={1} lg={2}></Grid>
+					<Grid item container sm={10} md={10} lg={8} direction="column">
 						<Typography
 							style={{ marginBottom: 20 }}
 							component="h1"
@@ -224,7 +217,7 @@ export default class Register extends Component {
 							</Grid>
 						</Card>
 					</Grid>
-					<Grid item xs={false} sm={2} md={false} lg={2}></Grid>
+					<Grid item xs={false} sm={1} md={1} lg={2}></Grid>
 				</Grid>
 				{/* footer */}
 				<div
@@ -234,60 +227,9 @@ export default class Register extends Component {
 						minWidth: "99vw",
 					}}
 				>
-					<Card>
-						<Box
-							display="flex"
-							width="100%"
-							justifyContent="space-around"
-							style={{ margin: 10 }}
-						>
-							<Box flexDirection="column" display="flex">
-								<Box flexDirection="row" display="flex">
-									<Typography variant="h4" color="primary">
-										STEM
-									</Typography>
-									<Typography
-										variant="h4"
-										color="secondary"
-										style={{ marginRight: 20 }}
-									>
-										XUS
-									</Typography>
-								</Box>
-								<Typography component="p">Phone: +233304567908</Typography>
-								<Typography component="p">Email: contact@stemxus.io</Typography>
-							</Box>
-
-							<Box flexDirection="column" display="flex">
-								<Typography component="p">Advertise</Typography>
-								<Typography component="p">Contact Us</Typography>
-								<Typography component="p">Careers</Typography>
-							</Box>
-
-							<Box
-								flexDirection="column"
-								display="flex"
-								justifyContent="flex-start"
-							>
-								<Button color="secondary" startIcon={<Facebook />}>
-									Facebook
-								</Button>
-								<Button color="secondary" startIcon={<Instagram />}>
-									Instagram
-								</Button>
-								<Button color="secondary" startIcon={<Twitter />}>
-									Twitter
-								</Button>
-								<Button color="secondary" startIcon={<YouTube />}>
-									Youtube
-								</Button>
-							</Box>
-						</Box>
-
-						<Box display="flex" justifyContent="center">
-							<Typography component="p">&copy; Copyright STEMXUS </Typography>
-						</Box>
-					</Card>
+					<Hidden xsDown>
+						<Footer />
+					</Hidden>
 				</div>
 				{/* end of footer */}
 			</Fragment>
