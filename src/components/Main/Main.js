@@ -10,8 +10,10 @@ import {
 	Card,
 	CardActionArea,
 	CardContent,
+	Paper,
 } from "@material-ui/core";
 import Footer from "../Footer";
+import LoginCard from "../auth/Login/LoginCard";
 
 export default class Main extends Component {
 	render() {
@@ -73,6 +75,61 @@ export default class Main extends Component {
 			<Fragment>
 				<Mainbar auth={auth} />
 				<Toolbar />
+				<Paper
+					style={{
+						backgroundImage: `url(https://bit.ly/2WNi2Ml)`,
+						backgroundSize: "100%",
+						backgroundPosition: "center",
+						height: "80vh",
+					}}
+				>
+					<Grid container>
+						<Grid item xs={false} sm={false} md={false} lg={1} xl={2} />
+						<Grid item container sm={12} md={12} lg={10} xl={8}>
+							<Grid sm={6} m={2} direction="column">
+								<Box display="flex" justifyContent="center" m={2}>
+									<Typography
+										component="body"
+										variant="h5"
+										gutterBottom
+										style={{ color: "white", marginTop: 50 }}
+									></Typography>
+								</Box>
+								<Box display="flex" justifyContent="center" m={2}>
+									<Typography
+										component="body"
+										variant="h5"
+										gutterBottom
+										style={{ color: "white", marginTop: 50 }}
+									>
+										The STEM Communinty
+									</Typography>
+								</Box>
+								<Box display="flex" justifyContent="center" m={2}>
+									<Typography
+										component="p"
+										variant="h5"
+										gutterBottom
+										style={{ color: "white" }}
+									>
+										Connecting Learning, Connecting Jobs, Connecting Events
+									</Typography>
+								</Box>
+							</Grid>
+							<Grid sm={6} m={2} direction="column" container>
+								<Box
+									display="flex"
+									justifyContent="center"
+									flexDirection="column"
+									style={{ marginTop: 30 }}
+								>
+									<LoginCard />
+								</Box>
+							</Grid>
+						</Grid>
+						<Grid item xs={false} sm={false} md={false} lg={1} xl={2} />
+					</Grid>
+				</Paper>
 				<Grid container style={{ marginTop: 20, padding: 10 }}>
 					<Grid item xs={false} sm={false} md={false} lg={1} xl={2}></Grid>
 					<Grid

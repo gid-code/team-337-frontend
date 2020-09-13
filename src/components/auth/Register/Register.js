@@ -9,7 +9,6 @@ import {
 	Button,
 	Box,
 	Select,
-	Hidden,
 } from "@material-ui/core";
 import { PersonOutline, Email, Lock, AccountBox } from "@material-ui/icons";
 import Footer from "../../Footer";
@@ -22,7 +21,7 @@ export default class Register extends Component {
 				<Toolbar />
 				<Grid
 					container
-					style={{ marginTop: 20, padding: 10, minHeight: "90vh" }}
+					style={{ marginTop: 20, padding: 10, minHeight: "85vh" }}
 				>
 					<Grid item xs={false} sm={1} md={1} lg={2}></Grid>
 					<Grid item container sm={10} md={10} lg={8} direction="column">
@@ -220,17 +219,9 @@ export default class Register extends Component {
 					<Grid item xs={false} sm={1} md={1} lg={2}></Grid>
 				</Grid>
 				{/* footer */}
-				<div
-					style={{
-						position: "fixed",
-						bottom: 0,
-						minWidth: "99vw",
-					}}
-				>
-					<Hidden xsDown>
-						<Footer />
-					</Hidden>
-				</div>
+				<footer style={{ bottom: 0 }}>
+					<Footer />
+				</footer>
 				{/* end of footer */}
 			</Fragment>
 		);
