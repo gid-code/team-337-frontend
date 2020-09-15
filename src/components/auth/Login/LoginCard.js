@@ -1,25 +1,19 @@
-import {
-	Box,
-	Button,
-	Card,
-	Grid,
-	TextField,
-	Typography,
-} from "@material-ui/core";
+import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Lock, PersonOutline } from "@material-ui/icons";
 import React from "react";
 
-export default function LoginCard() {
+export default function LoginCard(props) {
+	const { main } = props;
 	return (
 		// <Card item container>
+
 		<Grid item container sm={12} direction="column">
 			<form>
 				<Box display="flex" justifyContent="center" m={2}>
 					<Typography
-						component="caption"
 						variant="h3"
 						gutterBottom
-						color="secondary"
+						color={main ? "primary" : "secondary"}
 					>
 						LOGIN
 					</Typography>
@@ -28,11 +22,18 @@ export default function LoginCard() {
 				<Box display="flex" width="95%" style={{ margin: 10 }}>
 					<Button
 						variant="contained"
-						size="normal"
+						size="medium"
 						startIcon={<PersonOutline style={{ color: "white" }} />}
 						color="primary"
 					/>
-					<Box display="flex" style={{ width: "100%" }}>
+					<Box
+						display="flex"
+						style={
+							main
+								? { width: "100%", backgroundColor: "#fff7b0" }
+								: { width: "100%" }
+						}
+					>
 						<TextField
 							id="uname"
 							placeholder="Username"
@@ -47,11 +48,17 @@ export default function LoginCard() {
 				<Box display="flex" width="95%" style={{ margin: 10 }}>
 					<Button
 						variant="contained"
-						size="normal"
 						startIcon={<Lock style={{ color: "white" }} />}
 						color="primary"
 					/>
-					<Box display="flex" style={{ width: "100%" }}>
+					<Box
+						display="flex"
+						style={
+							main
+								? { width: "100%", backgroundColor: "#fff7b0" }
+								: { width: "100%" }
+						}
+					>
 						<TextField
 							id="pwd"
 							placeholder="Password"
@@ -67,7 +74,6 @@ export default function LoginCard() {
 				<Box display="flex" width="95%" style={{ margin: 10 }}>
 					<Button
 						variant="contained"
-						size="normal"
 						color="primary"
 						style={{ width: "100%", color: "white" }}
 						fullWidth
@@ -80,7 +86,6 @@ export default function LoginCard() {
 				<Box display="flex" style={{ margin: 10 }}>
 					<Button
 						variant="contained"
-						size="normal"
 						color="secondary"
 						style={{ color: "white" }}
 					>

@@ -32,16 +32,11 @@ export default class Register extends Component {
 							variant="h5"
 						></Typography>
 
-						<Card item container>
+						<Card>
 							<Grid item container sm={12} direction="column">
 								<form>
 									<Box display="flex" justifyContent="center" m={2}>
-										<Typography
-											component="caption"
-											variant="h3"
-											gutterBottom
-											color="secondary"
-										>
+										<Typography variant="h3" gutterBottom color="secondary">
 											REGISTER
 										</Typography>
 									</Box>
@@ -51,7 +46,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={
 														<PersonOutline style={{ color: "white" }} />
 													}
@@ -72,7 +66,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={<Email style={{ color: "white" }} />}
 													color="primary"
 												/>
@@ -92,7 +85,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={<Lock style={{ color: "white" }} />}
 													color="primary"
 												/>
@@ -114,7 +106,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={
 														<PersonOutline style={{ color: "white" }} />
 													}
@@ -135,7 +126,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={
 														<PersonOutline style={{ color: "white" }} />
 													}
@@ -156,7 +146,6 @@ export default class Register extends Component {
 											<Box display="flex" width="90%" style={{ margin: 10 }}>
 												<Button
 													variant="contained"
-													size="normal"
 													startIcon={<Lock style={{ color: "white" }} />}
 													color="primary"
 												/>
@@ -202,7 +191,6 @@ export default class Register extends Component {
 										<Box display="flex" width="95%" style={{ margin: 10 }}>
 											<Button
 												variant="contained"
-												size="normal"
 												color="primary"
 												style={{ width: "100%", color: "white" }}
 												fullWidth

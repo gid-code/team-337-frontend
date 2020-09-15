@@ -21,7 +21,7 @@ export default class BookItem extends Component {
 						<CardMedia
 							component="img"
 							alt={book.title}
-							height="140"
+							height="240"
 							image={book.image}
 							title={book.title}
 						/>

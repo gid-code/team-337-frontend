@@ -14,6 +14,17 @@ import {
 } from "@material-ui/core";
 import Footer from "../Footer";
 import LoginCard from "../auth/Login/LoginCard";
+import student from "../../assets/img/student.png";
+import bckg from "../../assets/img/bg3.jpg";
+import bckst from "../../assets/img/bg6.jpg";
+import advt from "../../assets/img/ad.png";
+import stup from "../../assets/img/startup.png";
+import vImg from "../../assets/img/video1.png";
+import aImg from "../../assets/img/advert2.png";
+import bookImg from "../../assets/img/book.jpg";
+import ideaImg from "../../assets/img/idea1.png";
+import qnaImg from "../../assets/img/qna1.png";
+import avdImg from "../../assets/img/advert1.png";
 
 export default class Main extends Component {
 	render() {
@@ -22,52 +33,52 @@ export default class Main extends Component {
 				title: "Videos",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: vImg,
 			},
 
 			{
 				title: "Articles",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: aImg,
 			},
 
 			{
 				title: "Books",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: bookImg,
 			},
 			{
 				title: "Job Listings",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: aImg,
 			},
 			{
 				title: "Event Listings",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: advt,
 			},
 
 			{
 				title: "Idea Sharing",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: ideaImg,
 			},
 			{
 				title: "QnA",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: qnaImg,
 			},
 			{
 				title: "Advertisement",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: avdImg,
 			},
 		];
 		const auth = false;
@@ -77,19 +88,23 @@ export default class Main extends Component {
 				<Toolbar />
 				<Paper
 					style={{
-						backgroundImage: `url(https://bit.ly/2WNi2Ml)`,
+						backgroundImage: `url(${bckg}) `,
 						backgroundSize: "100%",
 						backgroundPosition: "center",
-						height: "80vh",
+						WebkitBackgroundSize: "cover",
+						MozBackgroundSize: "cover",
+						OBackgroundSize: "cover",
+						backgroundRepeat: "no-repeat",
+						height: "100vh",
 					}}
 				>
 					<Grid container>
 						<Grid item xs={false} sm={false} md={false} lg={1} xl={2} />
 						<Grid item container sm={12} md={12} lg={10} xl={8}>
-							<Grid sm={6} m={2} direction="column">
+							<Grid item container sm={6} m={2} direction="column">
 								<Box display="flex" justifyContent="center" m={2}>
 									<Typography
-										component="body"
+										component="div"
 										variant="h5"
 										gutterBottom
 										style={{ color: "white", marginTop: 50 }}
@@ -97,7 +112,7 @@ export default class Main extends Component {
 								</Box>
 								<Box display="flex" justifyContent="center" m={2}>
 									<Typography
-										component="body"
+										component="div"
 										variant="h5"
 										gutterBottom
 										style={{ color: "white", marginTop: 50 }}
@@ -116,14 +131,14 @@ export default class Main extends Component {
 									</Typography>
 								</Box>
 							</Grid>
-							<Grid sm={6} m={2} direction="column" container>
+							<Grid sm={6} m={2} direction="column" container item>
 								<Box
 									display="flex"
 									justifyContent="center"
 									flexDirection="column"
 									style={{ marginTop: 30 }}
 								>
-									<LoginCard />
+									<LoginCard main />
 								</Box>
 							</Grid>
 						</Grid>
@@ -142,12 +157,7 @@ export default class Main extends Component {
 						direction="column"
 					>
 						<Box display="flex" justifyContent="center" m={2}>
-							<Typography
-								component="caption"
-								variant="h3"
-								gutterBottom
-								color="secondary"
-							>
+							<Typography variant="h3" gutterBottom color="secondary">
 								Features
 							</Typography>
 						</Box>
@@ -157,15 +167,11 @@ export default class Main extends Component {
 								display="flex"
 								justifyContent="flex-start"
 								flexDirection="row"
+								m={2}
 							>
 								<Grid direction="column" container m={2}>
 									<Box display="flex" justifyContent="center">
-										<Typography
-											component="caption"
-											gutterBottom
-											color="secondary"
-											variant="h5"
-										>
+										<Typography gutterBottom color="secondary" variant="h5">
 											STEMXUS For Students
 										</Typography>
 									</Box>
@@ -191,9 +197,11 @@ export default class Main extends Component {
 								<Grid direction="column" container m={2}>
 									<CardMedia
 										component="img"
-										height="180"
-										image="https://bit.ly/2WNi2Ml"
-										title="kkdl"
+										height="250"
+										image={student}
+										width="80%"
+										title="student"
+										style={{ backgroundPosition: "center" }}
 									/>
 								</Grid>
 								{/* <Box>kdkdlel</Box> */}
@@ -204,15 +212,11 @@ export default class Main extends Component {
 								display="flex"
 								justifyContent="flex-start"
 								flexDirection="row"
+								m={2}
 							>
 								<Grid direction="column" container m={2}>
 									<Box display="flex" justifyContent="center">
-										<Typography
-											component="caption"
-											gutterBottom
-											color="secondary"
-											variant="h5"
-										>
+										<Typography gutterBottom color="secondary" variant="h5">
 											STEMXUS For Advertisers
 										</Typography>
 									</Box>
@@ -237,9 +241,10 @@ export default class Main extends Component {
 								<Grid direction="column" container m={2}>
 									<CardMedia
 										component="img"
-										height="180"
-										image="https://bit.ly/2WNi2Ml"
-										title="kkdl"
+										height="250"
+										image={advt}
+										title="advert"
+										style={{ backgroundPosition: "center" }}
 									/>
 								</Grid>
 							</Box>
@@ -249,15 +254,11 @@ export default class Main extends Component {
 								display="flex"
 								justifyContent="flex-start"
 								flexDirection="row"
+								m={2}
 							>
 								<Grid container direction="column" m={2}>
 									<Box display="flex" justifyContent="center">
-										<Typography
-											component="caption"
-											color="secondary"
-											gutterBottom
-											variant="h5"
-										>
+										<Typography color="secondary" gutterBottom variant="h5">
 											STEMXUS For Startups
 										</Typography>
 									</Box>
@@ -282,31 +283,34 @@ export default class Main extends Component {
 								<Grid container direction="column" m={2}>
 									<CardMedia
 										component="img"
-										height="180"
-										image="https://bit.ly/2WNi2Ml"
-										title="kkdl"
+										height="250"
+										width="180"
+										image={stup}
+										title="startup"
+										style={{ backgroundPosition: "center" }}
 									/>
 								</Grid>
 							</Box>
 							{/* end startup */}
 							{/* last */}
-							<Box display="flex" justifyContent="center" flexDirection="row">
+							<Box
+								display="flex"
+								justifyContent="center"
+								flexDirection="row"
+								m={1}
+							>
 								<Grid container direction="column" m={2}>
 									<CardMedia
 										component="img"
-										height="180"
-										image="https://bit.ly/2WNi2Ml"
+										height="300"
+										image={bckst}
 										title="kkdl"
+										style={{ position: "center" }}
 									/>
 								</Grid>
 								<Grid container direction="column" m={2}>
 									<Box display="flex" justifyContent="center">
-										<Typography
-											component="caption"
-											gutterBottom
-											color="primary"
-											variant="h5"
-										>
+										<Typography gutterBottom color="primary" variant="h5">
 											The STEM Result
 										</Typography>
 									</Box>
@@ -321,12 +325,7 @@ export default class Main extends Component {
 							{/* end last */}
 						</Grid>
 						<Box display="flex" justifyContent="center" m={3}>
-							<Typography
-								component="caption"
-								variant="h3"
-								gutterBottom
-								color="secondary"
-							>
+							<Typography variant="h3" gutterBottom color="secondary">
 								STEMXUS Hub
 							</Typography>
 						</Box>

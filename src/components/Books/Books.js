@@ -2,6 +2,11 @@ import React, { Component, Fragment } from "react";
 import { Grid, Typography, Toolbar } from "@material-ui/core";
 import BookItem from "./BookItem";
 import Navbar from "../Navbar";
+import sImg from "../../assets/img/scince1.png";
+import techImg from "../../assets/img/tech1.png";
+import engImg from "../../assets/img/eng1.png";
+import mathImg from "../../assets/img/maths1.png";
+import otherImg from "../../assets/img/advert2.png";
 
 export default class Books extends Component {
 	state = {
@@ -14,34 +19,34 @@ export default class Books extends Component {
 				title: "Science",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: sImg,
 			},
 
 			{
 				title: "Technology",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: techImg,
 			},
 
 			{
 				title: "Mathematics",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: mathImg,
 			},
 			{
 				title: "Engineering",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: engImg,
 			},
 
 			{
 				title: "Others",
 				desc:
 					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto laudantium consectetur eos vitae esse quo, quas aliquid totam nostrum eaque officiis earum magnam provident soluta. Amet sapiente modi unde inventore.",
-				image: "https://bit.ly/2WNi2Ml",
+				image: otherImg,
 			},
 		];
 		return (

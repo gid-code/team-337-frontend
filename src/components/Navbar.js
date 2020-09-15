@@ -30,6 +30,7 @@ import {
 	ExpandMore,
 } from "@material-ui/icons";
 import { withRouter } from "react-router-dom";
+import logo from "../assets/img/logo12.png";
 
 function Navbar(props) {
 	const { history } = props;
@@ -71,12 +72,18 @@ function Navbar(props) {
 						<Menu />
 					</IconButton>
 				</Hidden>
-				<Typography variant="h4" color="primary">
+				<img
+					src={logo}
+					alt="logo"
+					style={{ height: "5vh" }}
+					onClick={() => handleClick("/")}
+				></img>
+				{/* <Typography variant="h4" color="primary">
 					STEM
 				</Typography>
 				<Typography variant="h4" color="secondary" style={{ marginRight: 20 }}>
 					XUS
-				</Typography>
+				</Typography> */}
 				<div style={{ width: "100%" }}>
 					<Box display="flex">
 						<Box flexGrow={1}>

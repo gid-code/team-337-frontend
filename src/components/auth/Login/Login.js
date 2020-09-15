@@ -1,15 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Mainbar from "../../Main/Mainbar";
-import {
-	Toolbar,
-	Grid,
-	Typography,
-	Box,
-	Button,
-	Card,
-	TextField,
-} from "@material-ui/core";
-import { PersonOutline, Lock } from "@material-ui/icons";
+import { Toolbar, Grid, Typography, Card } from "@material-ui/core";
 import Footer from "../../Footer";
 import LoginCard from "./LoginCard";
 
@@ -31,7 +22,7 @@ export default class Login extends Component {
 							gutterBottom
 							variant="h5"
 						></Typography>
-						<Card item container>
+						<Card>
 							<LoginCard />
 						</Card>
 					</Grid>
