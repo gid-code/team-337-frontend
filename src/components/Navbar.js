@@ -49,7 +49,7 @@ function Navbar(props) {
 	};
 
 	const menuitem = [
-		["Dashboard", <Home />, "/"],
+		["Dashboard", <Home />, "/dashboard"],
 		["QnA", <BugReport />, "/qna"],
 		["Books", <LibraryBooks />, "/books"],
 		["Articles", <Description />, "/articles"],
