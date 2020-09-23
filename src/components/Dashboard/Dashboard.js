@@ -6,7 +6,6 @@ import {
 	Divider,
 	Grid,
 	Select,
-	TextareaAutosize,
 	Toolbar,
 	Typography,
 } from "@material-ui/core";
@@ -14,6 +13,7 @@ import { AddOutlined } from "@material-ui/icons";
 import React, { Component, Fragment } from "react";
 import Navbar from "../Navbar";
 import profile from "../../assets/img/profile.png";
+import Post from "./Post";
 
 export default class Dashboard extends Component {
 	render() {
@@ -33,41 +33,33 @@ export default class Dashboard extends Component {
 					>
 						<Card>
 							<CardContent>
-								<Box display="flex" flexDirection="column">
-									<Box display="flex" justifyContent="center">
-										<img
-											src={profile}
-											alt="profile"
-											style={{ height: "15vh", width: "12vh" }}
-										></img>
-									</Box>
-									<Box display="flex" justifyContent="center">
-										<Typography
-											style={{ marginBottom: 10 }}
-											component="h1"
-											gutterBottom
-											variant="h5"
-										>
-											Desire Seyram
-										</Typography>
-									</Box>
-									<Box display="flex" justifyContent="center">
-										<Typography style={{ marginBottom: 10 }} gutterBottom>
-											Stage: College
-										</Typography>
-									</Box>
+								<Box display="flex" flexDirection="column" alignItems="center">
+									<img
+										src={profile}
+										alt="profile"
+										style={{ height: "15vh", width: "12vh" }}
+									></img>
+									<Typography
+										style={{ marginBottom: 10 }}
+										component="h1"
+										gutterBottom
+										variant="h5"
+									>
+										Desire Seyram
+									</Typography>
+									<Typography style={{ marginBottom: 10 }} gutterBottom>
+										Stage: College
+									</Typography>
 									<Divider />
-									<Box display="flex" justifyContent="center" m={2}>
-										<Button
-											variant="contained"
-											size="medium"
-											startIcon={<AddOutlined />}
-											color="primary"
-											style={{ color: "white" }}
-										>
-											Chanage Profile
-										</Button>
-									</Box>
+									<Button
+										variant="contained"
+										size="medium"
+										startIcon={<AddOutlined />}
+										color="primary"
+										style={{ color: "white" }}
+									>
+										Change Profile
+									</Button>
 								</Box>
 							</CardContent>
 						</Card>
@@ -79,8 +71,9 @@ export default class Dashboard extends Component {
 						md={12}
 						lg={8}
 						direction="column"
-						style={{ marginLeft: 10, marginRight: 8 }}
+						style={{ padding: 10 }}
 					>
+						{/* <div> */}
 						<Box display="flex" m={1}>
 							<Select native size="small" variant="outlined" id="category">
 								<option value="Science">Science</option>
@@ -94,6 +87,8 @@ export default class Dashboard extends Component {
 						</Box>
 						<textarea
 							rowsMin={4}
+							multiline
+							rows={6}
 							placeholder="Share what you are learning or ask a question"
 						></textarea>
 						<Box display="flex" m={1}>
@@ -102,13 +97,32 @@ export default class Dashboard extends Component {
 							</Button>
 						</Box>
 
-						<Grid item container spacing={3} direction="column">
+						<Grid item container direction="column">
 							{/* {dbooks.map((book) => (
                         <QuestionItem book={book} key={book.title} />
                      ))} */}
+							<Post />
+							<Post />
 						</Grid>
+						{/* </div> */}
 					</Grid>
-					<Grid item xs={false} sm={1} md={false} lg={2}></Grid>
+					<Grid
+						item
+						container
+						xs={false}
+						sm={1}
+						md={false}
+						lg={2}
+						direction="column"
+					>
+						<Typography color="primary" variant="h6">
+							Top Advertisement
+						</Typography>
+						<Divider />
+						<Box display="flex" alignItems="center" flexDirection="column">
+							<Typography variant="h4">No Ads</Typography>
+						</Box>
+					</Grid>
 				</Grid>
 			</Fragment>
 		);
