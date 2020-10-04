@@ -7,6 +7,8 @@ import techImg from "../../assets/img/tech1.png";
 import engImg from "../../assets/img/eng1.png";
 import mathImg from "../../assets/img/maths1.png";
 import otherImg from "../../assets/img/advert2.png";
+// import { Query } from "react-apollo";
+// import { gql } from "apollo-boost";
 
 export default class Books extends Component {
 	state = {
@@ -49,7 +51,27 @@ export default class Books extends Component {
 				image: otherImg,
 			},
 		];
+
+		// const getBooks = gql`
+		// 	{
+		// 		books {
+		// 			id
+		// 			title
+		// 			description
+		// 			thumbnail
+		// 		}
+		// 	}
+		// `;
 		return (
+			// <Query query={getBooks}>
+			// 	{({ loading, error, data }) => {
+			// 		if (loading) return <p>Loading....</p>;
+			// 		if (error) return <p>Error ....</p>;
+			// 		return (
+			// 		);
+			// 	}}
+			// </Query>
+
 			<Fragment>
 				<Navbar />
 				<Toolbar />
