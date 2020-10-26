@@ -8,21 +8,29 @@ import Register from "./components/auth/Register/Register";
 import Login from "./components/auth/Login/Login";
 import Qna from "./components/QNA/Qna";
 import Dashboard from "./components/Dashboard/Dashboard";
+import { Provider } from "react-redux";
+import store from "./store";
+import PrivateRoute from "./common/PrivateRoute";
 
 function App() {
 	return (
-		<Paper elevation={0} style={{ background: grey[200], minHeight: "100vh" }}>
-			<Router>
-				<Switch>
-					<Route exact path="/" component={Main} />
-					<Route exact path="/register" component={Register} />
-					<Route exact path="/login" component={Login} />
-					<Route exact path="/dashboard" component={Dashboard} />
-					<Route exact path="/qna" component={Qna} />
-					<Route exact path="/books" component={Books} />
-				</Switch>
-			</Router>
-		</Paper>
+		<Provider store={store}>
+			<Paper
+				elevation={0}
+				style={{ background: grey[200], minHeight: "100vh" }}
+			>
+				<Router>
+					<Switch>
+						<Route exact path="/" component={Main} />
+						<Route exact path="/register" component={Register} />
+						<Route exact path="/login" component={Login} />
+						<PrivateRoute exact path="/dashboard" component={Dashboard} />
+						<PrivateRoute exact path="/qna" component={Qna} />
+						<PrivateRoute exact path="/books" component={Books} />
+					</Switch>
+				</Router>
+			</Paper>
+		</Provider>
 	);
 }
 

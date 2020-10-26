@@ -14,8 +14,9 @@ import React, { Component, Fragment } from "react";
 import Navbar from "../Navbar";
 import profile from "../../assets/img/profile.png";
 import Post from "./Post";
+import { connect } from "react-redux";
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
 	render() {
 		return (
 			<Fragment>
@@ -45,7 +46,7 @@ export default class Dashboard extends Component {
 										gutterBottom
 										variant="h5"
 									>
-										Desire Seyram
+										{this.props.username}
 									</Typography>
 									<Typography style={{ marginBottom: 10 }} gutterBottom>
 										Stage: College
@@ -128,3 +129,9 @@ export default class Dashboard extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => ({
+	username: state.auth.username,
+});
+
+export default connect(mapStateToProps)(Dashboard);

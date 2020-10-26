@@ -8,8 +8,9 @@ import {
 } from "@material-ui/core";
 import { Comment } from "@material-ui/icons";
 import React from "react";
+import { connect } from "react-redux";
 
-export default function Post() {
+function Post(props) {
 	// const {book} = props
 	return (
 		<div>
@@ -24,7 +25,7 @@ export default function Post() {
 						<Box display="flex" flexDirection="column" alignItems="center">
 							<Avatar variant="square">DS</Avatar>
 
-							<Typography variant="h6">Desire Seyram</Typography>
+							<Typography variant="h6">{props.username}</Typography>
 							<Chip label="idea" style={{ backgroundColor: "yellow" }}></Chip>
 							<Typography style={{ marginTop: 10 }}>Hello everyone</Typography>
 							<Typography style={{ marginBottom: 15 }}>
@@ -44,3 +45,9 @@ export default function Post() {
 		</div>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	username: state.auth.username,
+});
+
+export default connect(mapStateToProps)(Post);

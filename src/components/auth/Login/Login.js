@@ -4,7 +4,7 @@ import { Toolbar, Grid, Typography, Card } from "@material-ui/core";
 import Footer from "../../Footer";
 import LoginCard from "./LoginCard";
 
-export default class Login extends Component {
+class Login extends Component {
 	render() {
 		return (
 			<Fragment>
@@ -23,7 +23,7 @@ export default class Login extends Component {
 							variant="h5"
 						></Typography>
 						<Card>
-							<LoginCard />
+							<LoginCard {...this.props} />
 						</Card>
 					</Grid>
 					<Grid item xs={false} sm={2} md={2} lg={3}></Grid>
@@ -37,3 +37,11 @@ export default class Login extends Component {
 		);
 	}
 }
+
+// const mapStateToProps = (state) => ({
+// 	isAuthenticated: state.auth.isAuthenticated,
+// });
+
+export default Login;
+
+// export default connect(mapStateToProps, { login })(Login);

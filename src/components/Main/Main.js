@@ -25,8 +25,10 @@ import bookImg from "../../assets/img/book.jpg";
 import ideaImg from "../../assets/img/idea1.png";
 import qnaImg from "../../assets/img/qna1.png";
 import avdImg from "../../assets/img/advert1.png";
+import { connect } from "react-redux";
+import Navbar from "../Navbar";
 
-export default class Main extends Component {
+class Main extends Component {
 	render() {
 		const dbooks = [
 			{
@@ -81,10 +83,10 @@ export default class Main extends Component {
 				image: avdImg,
 			},
 		];
-		const auth = false;
+		const auth = true;
 		return (
 			<Fragment>
-				<Mainbar auth={auth} />
+				{this.props.isAuthed ? <Navbar /> : <Mainbar login={auth} />}
 				<Toolbar />
 				<Paper
 					style={{
@@ -127,7 +129,7 @@ export default class Main extends Component {
 										gutterBottom
 										style={{ color: "white" }}
 									>
-										Connecting Learning, Connecting Jobs, Connecting Events
+										Connecting Learner, Connecting Jobs, Connecting Events
 									</Typography>
 								</Box>
 							</Grid>
@@ -138,7 +140,9 @@ export default class Main extends Component {
 									flexDirection="column"
 									style={{ marginTop: 30 }}
 								>
-									<LoginCard main />
+									{this.props.isAuthed ? null : (
+										<LoginCard main {...this.props} />
+									)}
 								</Box>
 							</Grid>
 						</Grid>
@@ -367,3 +371,10 @@ export default class Main extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => ({
+	username: state.auth.username,
+	isAuthed: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(Main);

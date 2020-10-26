@@ -31,6 +31,7 @@ import {
 } from "@material-ui/icons";
 import { withRouter } from "react-router-dom";
 import logo from "../assets/img/logo12.png";
+import { connect } from "react-redux";
 
 function Navbar(props) {
 	const { history } = props;
@@ -58,6 +59,9 @@ function Navbar(props) {
 		["Events", <Bookmark />, "events"],
 		["Annoucement", <VolumeDown />, "anouncement"],
 	];
+
+	// const { username } = this.props;
+	// console.log(props.username);
 
 	return (
 		<AppBar color="inherit" position="fixed">
@@ -114,7 +118,8 @@ function Navbar(props) {
 									color="primary"
 									style={{ marginTop: 25 }}
 								>
-									Desire Seyram
+									{/* Desire Seyram */}
+									{props.username}
 								</Typography>
 								<ExpandMore
 									color="primary"
@@ -154,7 +159,7 @@ function Navbar(props) {
 								color="primary"
 								style={{ marginTop: 20 }}
 							>
-								Desire Seyram
+								{props.username}
 							</Typography>
 							<ExpandMore
 								color="primary"
@@ -168,4 +173,8 @@ function Navbar(props) {
 	);
 }
 
-export default withRouter(withWidth()(Navbar));
+const mapStateToProps = (state) => ({
+	username: state.auth.username,
+});
+
+export default connect(mapStateToProps)(withRouter(withWidth()(Navbar)));
